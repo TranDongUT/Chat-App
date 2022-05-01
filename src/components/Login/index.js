@@ -4,20 +4,25 @@ import { uiConfig, auth } from "../../firebase/config";
 import { AuthContext } from "../../store/AuthProvider";
 import "./style.scss";
 import logo from "../../assest/image/logo.png";
+import { getUser } from "../../store/actions";
 
 export default function Login() {
   const [isLogin, setLogin] = useState(false);
   const [state, dispatch] = useContext(AuthContext);
   const { user } = state;
+
   useEffect(() => {
     if (user.uid) {
       setLogin(true);
+    } else {
+      setLogin(false);
     }
   }, [user]);
 
   const logOut = () => {
     auth.signOut();
     setLogin(false);
+    dispatch(getUser(""));
   };
 
   return (

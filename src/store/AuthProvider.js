@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { initialState, userReducer } from "./reducers";
 import firebase from "firebase/compat/app";
 import { getUser } from "../store/actions";
+
 export const AuthContext = createContext();
 
 export default function AuthProvider({ children }) {
@@ -25,8 +26,6 @@ export default function AuthProvider({ children }) {
     ///clean up func
     return () => unregisterAuthObserver();
   }, []);
-
-  console.log(state);
 
   return (
     <AuthContext.Provider value={[state, dispatch]}>
