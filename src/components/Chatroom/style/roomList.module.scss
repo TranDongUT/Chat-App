@@ -1,0 +1,50 @@
+.roomList {
+  position: relative;
+
+  .header,
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    i {
+      padding: 5px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+  }
+
+  .footer {
+    &:hover {
+      cursor: pointer;
+      background-color: #aa076b;
+      border-bottom: 0.5px solid #fff;
+    }
+  }
+
+  .list {
+    transition: 0.2s linear;
+    max-height: 500px;
+    overflow-y: scroll;
+    .room {
+      padding: 7px 10px;
+      margin: 10px 0;
+      font-size: 20px;
+      transition: 0.2s linear;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #aa076b;
+        border-bottom: 0.5px solid #fff;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .roomList {
+    .list {
+      max-height: 250px;
+    }
+  }
+}

@@ -3,6 +3,8 @@ import { AuthContext } from "../../store/AuthProvider";
 import { auth } from "../../firebase/config";
 import { getUser } from "../../store/actions";
 
+import style from "./style/user.module.scss";
+
 export default function User() {
   const [state, dispatch] = useContext(AuthContext);
   const { user } = state;
@@ -13,10 +15,12 @@ export default function User() {
   };
 
   return (
-    <div>
-      <img className="avata" src={user.photoURL} alt="" />
-      <h3>{user.displayName}</h3>
-      <button onClick={() => logOut()}>Sign-Out</button>
+    <div className={style.user}>
+      <img className={style.user__avata} src={user.photoURL} alt="" />
+      <div>
+        <h3 className={style.user__name}>{user.displayName}</h3>
+        <button onClick={() => logOut()}>Sign-Out</button>
+      </div>
     </div>
   );
 }
