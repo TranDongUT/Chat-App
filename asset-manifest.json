@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Chat-App/static/css/main.ca8b5095.css",
-    "main.js": "/Chat-App/static/js/main.7375b94f.js",
+    "main.js": "/Chat-App/static/js/main.8d14726b.js",
     "static/media/yahoo-wallpapers.jpg": "/Chat-App/static/media/yahoo-wallpapers.3bf83d0d912c5e693a42.jpg",
     "static/media/logo.png": "/Chat-App/static/media/logo.52c8f7c23ff7a862223a.png",
     "index.html": "/Chat-App/index.html",
     "main.ca8b5095.css.map": "/Chat-App/static/css/main.ca8b5095.css.map",
-    "main.7375b94f.js.map": "/Chat-App/static/js/main.7375b94f.js.map"
+    "main.8d14726b.js.map": "/Chat-App/static/js/main.8d14726b.js.map"
   },
   "entrypoints": [
     "static/css/main.ca8b5095.css",
-    "static/js/main.7375b94f.js"
+    "static/js/main.8d14726b.js"
   ]
 }
