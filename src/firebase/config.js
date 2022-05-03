@@ -5,7 +5,7 @@ import { getFirestore } from "firebase/firestore";
 // Configure Firebase.
 const firebaseConfig = {
   apiKey: "AIzaSyA9JcLGBMYrXf-y209ZhbKPFITb36TKU4k",
-  authDomain: "chat-app-21d8f.firebaseapp.com",
+  authDomain: "trandongut.github.io",
   projectId: "chat-app-21d8f",
   storageBucket: "chat-app-21d8f.appspot.com",
   messagingSenderId: "691669657019",
@@ -19,7 +19,7 @@ const app = firebase.initializeApp(firebaseConfig);
 // Configure FirebaseUI.
 const uiConfig = {
   signInFlow: "popup",
-  signInSuccessUrl: "/Chatroom",
+  signInSuccessUrl: "/",
   signInOptions: [
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     firebase.auth.FacebookAuthProvider.PROVIDER_ID,
