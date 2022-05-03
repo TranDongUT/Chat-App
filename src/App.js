@@ -8,7 +8,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/Login" element={<Login />} />
-      <Route path="/Chatroom" element={<Chatroom />} />
+      <Route path="/Chatroom/" element={<Chatroom />} />
+      <Route path="/Chatroom/:roomId" element={<Chatroom />} />
     </Routes>
   );
 }

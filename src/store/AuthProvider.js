@@ -1,8 +1,9 @@
 import React, { createContext, useEffect, useReducer, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { initialState, userReducer } from "./reducers";
 import firebase from "firebase/compat/app";
 import { getUser } from "../store/actions";
+import { auth } from "../firebase/config";
 
 export const AuthContext = createContext();
 

@@ -1,0 +1,29 @@
+.message {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #fffcdc;
+  border-radius: 10px;
+  width: fit-content;
+
+  .avatar {
+    border-radius: 50px;
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  .displayName {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+  }
+  .createAt {
+    font-size: 14px;
+    color: #adadad;
+  }
+  .text {
+    max-width: 500px;
+    word-break: break-all;
+  }
+}

@@ -1,0 +1,58 @@
+.chatWindow {
+  padding: 5px 10px;
+  height: 100vh;
+  position: relative;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    i {
+      padding: 5px;
+      font-size: 30px;
+      float: left;
+      cursor: pointer;
+    }
+  }
+
+  .body {
+    .messageList {
+      height: 600px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+    }
+
+    .inputField {
+      width: 100%;
+
+      input {
+        outline: none;
+        width: 80%;
+        font-size: 18px;
+        padding: 5px 10px;
+      }
+
+      button {
+        outline: none;
+        border: none;
+        background-image: linear-gradient(45deg, #7f00ff, #e100ff);
+        transition: 0.2s linear;
+        color: #fff;
+        font-size: 18px;
+        padding: 8px 15px;
+        &:hover {
+          opacity: 0.8;
+          cursor: pointer;
+        }
+
+        &:disabled {
+          background-image: unset;
+          background-color: #adadad;
+        }
+      }
+    }
+  }
+}

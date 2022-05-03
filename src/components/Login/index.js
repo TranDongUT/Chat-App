@@ -5,6 +5,7 @@ import { AuthContext } from "../../store/AuthProvider";
 import "./style.scss";
 import logo from "../../assest/image/logo.png";
 import { getUser } from "../../store/actions";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [isLogin, setLogin] = useState(false);
@@ -49,6 +50,7 @@ export default function Login() {
                 </span>
                 ! You are now signed-in!
               </p>
+              <Link to={"Chatroom"}>Chatroom</Link>
               <button className="logOutBtn" onClick={() => logOut()}>
                 Sign-out
               </button>

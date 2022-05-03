@@ -1,7 +1,6 @@
-import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
-import "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
 
 // Configure Firebase.
 const firebaseConfig = {
@@ -13,7 +12,9 @@ const firebaseConfig = {
   appId: "1:691669657019:web:3cfd5b086e8820e842109e",
   measurementId: "G-S10SNWB8Y1",
 };
-firebase.initializeApp(firebaseConfig);
+//firebase.initializeApp(firebaseConfig);
+
+const app = firebase.initializeApp(firebaseConfig);
 
 // Configure FirebaseUI.
 const uiConfig = {
@@ -26,6 +27,6 @@ const uiConfig = {
 };
 
 const auth = firebase.auth();
-const db = firebase.firestore;
+const db = getFirestore(app);
 
 export { auth, db, uiConfig };
