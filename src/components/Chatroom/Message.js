@@ -1,10 +1,14 @@
 import React from "react";
 import style from "./style/message.module.scss";
+import clsx from "clsx";
+
 export default function Message(props) {
-  const { photoURL, displayName, createAt, text } = props;
+  const { photoURL, displayName, createAt, text, auth } = props;
+
+  const classStyle = clsx(style.message, auth ? style.authMessage : null);
 
   return (
-    <div className={style.message}>
+    <div className={classStyle}>
       <img className={style.avatar} src={photoURL} alt="" />
       <div className={style.displayName}>
         <h3>{displayName}</h3>
