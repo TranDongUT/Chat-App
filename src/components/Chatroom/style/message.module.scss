@@ -23,13 +23,17 @@
     color: #adadad;
   }
   .text {
-    max-width: 500px;
-    word-break: break-all;
+    max-width: 400px;
+    word-break: break-word;
   }
 }
 
 .authMessage {
   position: relative;
-  right: -50%;
+  align-self: flex-end;
   background-color: #d9a7c7;
+  .text {
+    max-width: 290px;
+    word-break: break-word;
+  }
 }

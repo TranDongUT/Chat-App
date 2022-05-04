@@ -1,7 +1,7 @@
 .chatWindow {
   padding: 5px 10px;
-  height: 100vh;
   position: relative;
+  bottom: -200px;
 
   .header {
     display: flex;
@@ -18,15 +18,28 @@
 
   .body {
     .messageList {
-      height: 600px;
-      overflow: hidden;
+      height: 550px;
+      width: 100%;
+      overflow: scroll;
       display: flex;
       flex-direction: column;
-      justify-content: end;
+
+      .viewMore {
+        outline: none;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
     }
 
     .inputField {
       width: 100%;
+      position: fixed;
+      bottom: 20px;
 
       input {
         outline: none;
@@ -42,7 +55,7 @@
         transition: 0.2s linear;
         color: #fff;
         font-size: 18px;
-        padding: 8px 15px;
+        padding: 7px 15px;
         &:hover {
           opacity: 0.8;
           cursor: pointer;

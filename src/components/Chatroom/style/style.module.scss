@@ -9,6 +9,7 @@
   }
   .col7 {
     width: 70%;
+    overflow: scroll;
   }
 }
 
@@ -19,6 +20,11 @@
     .col3,
     .col7 {
       width: 100%;
+    }
+
+    .col3 {
+      position: fixed;
+      z-index: 9999;
     }
   }
 }

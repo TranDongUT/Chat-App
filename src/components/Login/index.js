@@ -50,9 +50,9 @@ export default function Login() {
                 </span>
                 ! You are now signed-in!
               </p>
-              <button className="logOutBtn">
-                <Link to={"/Chatroom"}>Go To Chatroom</Link>
-              </button>
+              <Link to={"/Chatroom"}>
+                <button className="logOutBtn">Go To Chatroom</button>
+              </Link>
               <button className="logOutBtn" onClick={() => logOut()}>
                 Sign-out
               </button>

@@ -28,12 +28,14 @@ export default function ChatWindow() {
 
   const messageRef = collection(db, "messages");
 
+  const [amountMessage, setAmountMessage] = useState(5);
+
   useEffect(async () => {
     const q = query(
       messageRef,
       where("roomId", "==", roomId),
       orderBy("createAt", "desc"),
-      limit(5)
+      limit(amountMessage)
     );
 
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
@@ -56,7 +58,7 @@ export default function ChatWindow() {
     };
 
     // const querySnapshot = await getDocs(q);
-  }, [roomId]);
+  }, [roomId, amountMessage]);
 
   const handleSubmit = async () => {
     await addDoc(messageRef, {
@@ -89,6 +91,12 @@ export default function ChatWindow() {
       </div>
       <div className={style.body}>
         <div className={style.messageList}>
+          <button
+            onClick={() => setAmountMessage(amountMessage + 5)}
+            className={style.viewMore}
+          >
+            view more...
+          </button>
           {messageList &&
             messageList
               .map((messageItem, index) => {
