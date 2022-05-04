@@ -1,5 +1,6 @@
 # demo
 https://chat-app-21d8f.web.app/ .
+## note: config yourself firebase. I just private it
 
 ![chatroom-mobile](https://user-images.githubusercontent.com/84276205/166634596-102d099d-2130-4a89-979b-8350a5017bb3.jpg)
 ![login-mobile](https://user-images.githubusercontent.com/84276205/166634604-a2a798cf-1675-46bb-8742-a2bbb6468cc5.jpg)
