@@ -17,11 +17,11 @@
 
   .body {
     position: relative;
-
+    height: 90%;
+    overflow: scroll;
     .messageList {
       height: 550px;
       width: 100%;
-      overflow: scroll;
       display: flex;
       flex-direction: column;
       position: relative;
@@ -43,11 +43,14 @@
       width: 70%;
       position: fixed;
       bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       input {
         outline: none;
         width: 80%;
-        font-size: 18px;
+        font-size: 25px;
         padding: 5px 10px;
       }
 
@@ -58,7 +61,7 @@
         transition: 0.2s linear;
         color: #fff;
         font-size: 18px;
-        padding: 7px 15px;
+        padding: 11px 15px;
         &:hover {
           opacity: 0.8;
           cursor: pointer;
@@ -76,10 +79,12 @@
 @media only screen and (max-width: 768px) {
   .chatWindow {
     position: relative;
+    height: 400px;
     bottom: -200px;
+
     .body {
       .inputField {
-        width: 100%;
+        width: 95%;
         position: fixed;
         bottom: 20px;
       }

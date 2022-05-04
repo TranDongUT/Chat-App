@@ -84,7 +84,11 @@ export default function Roomlist() {
             {listRoom &&
               listRoom.map((room) => {
                 return (
-                  <Link key={room.roomId} to={`/Chatroom/${room.roomId}`}>
+                  <Link
+                    onClick={() => setShowList(false)}
+                    key={room.roomId}
+                    to={`/Chatroom/${room.roomId}`}
+                  >
                     <li className={style.room}>{room.roomId}</li>
                   </Link>
                 );

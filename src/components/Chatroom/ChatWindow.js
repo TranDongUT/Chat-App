@@ -30,19 +30,18 @@ export default function ChatWindow() {
 
   const [amountMessage, setAmountMessage] = useState(5);
 
-  useEffect(async () => {
+  const queryData = async () => {
     const q = query(
       messageRef,
-      where("roomId", "==", roomId),
+      where("roomId", "==", roomId ? roomId : ""),
       orderBy("createAt", "desc"),
       limit(amountMessage)
     );
 
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      setMessageList("");
+      setMessageList(""); ///reset
 
-      if (!querySnapshot.docs.length) {
-      } else {
+      if (querySnapshot.docs.length) {
         const newList = [];
         querySnapshot.forEach((doc) => {
           newList.push(doc.data());
@@ -52,13 +51,22 @@ export default function ChatWindow() {
         });
       }
     });
+  };
 
+  useEffect(() => {
+    queryData();
     return () => {
-      unsubscribe();
+      queryData();
     };
+  }, [amountMessage]);
 
-    // const querySnapshot = await getDocs(q);
-  }, [roomId, amountMessage]);
+  useEffect(() => {
+    setAmountMessage(5);
+    queryData();
+    return () => {
+      queryData();
+    };
+  }, [roomId]);
 
   const handleSubmit = async () => {
     await addDoc(messageRef, {
@@ -71,6 +79,12 @@ export default function ChatWindow() {
       roomId: roomId,
     });
     setText("");
+  };
+
+  const onSubmit = (event) => {
+    if (event.key === "Enter") {
+      handleSubmit();
+    }
   };
 
   return (
@@ -97,7 +111,7 @@ export default function ChatWindow() {
           >
             view more...
           </button>
-          {messageList &&
+          {messageList ? (
             messageList
               .map((messageItem, index) => {
                 return (
@@ -110,7 +124,10 @@ export default function ChatWindow() {
                   />
                 );
               })
-              .reverse()}
+              .reverse()
+          ) : (
+            <div>Empty Room</div>
+          )}
           {/* End Message List */}
         </div>
         <div className={style.inputField}>
@@ -119,6 +136,7 @@ export default function ChatWindow() {
             type="text"
             value={text}
             onChange={(e) => setText(e.target.value)}
+            onKeyDown={(e) => onSubmit(e)}
           />
           <button onClick={() => handleSubmit()} disabled={!text}>
             Send
